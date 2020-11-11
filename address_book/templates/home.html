@@ -1,0 +1,34 @@
+{% extends 'base.html'  %}
+
+
+{% block content %}
+
+
+<h1>this is HOme</h1>
+
+{% if address %}
+
+{% for item in address %}
+
+
+{{item.name}}<br>
+{{item.email}}<br>
+{{item.phone_number}}<br>
+{{item.city}}<br>
+{{item.state}}<br>
+{{item.zipcode}}<br>
+
+<br>
+<a href="{% url 'delete' item.id %}">DELETE</a> <br>
+
+
+<a href="{% url 'edit_address' item.id %}">EDIT ADDRESS</a>
+<hr>
+{% endfor %}
+
+
+
+{%  endif %}
+
+
+{% endblock %}
